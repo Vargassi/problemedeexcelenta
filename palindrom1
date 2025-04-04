@@ -1,0 +1,68 @@
+#include <fstream>
+using namespace std;
+ifstream fin("palindrom.in");
+ofstream fout  ("palindrom.out");
+void fcif(int cif, int &p)
+{
+    p = 1;
+    while (cif >= 10)
+    {
+        cif=cif/ 10;
+        p =p*10;
+    }
+}
+
+void elimcif(int &n, int p)
+{
+    if (p > 1)
+    {
+        n=n%p;
+        n=n/10;
+    }
+    else
+    {
+        n=0;
+    }
+}
+
+int main()
+{
+int c,n;
+ fin>>c;
+ if(c==1)
+ { int nr,o,c,nrp=0;
+     fin>>n;
+     for(int i=1;i<=n;i++)
+     {
+       fin>>nr;
+       c=nr;
+       o=0;
+       while(nr!=0)
+       {
+           o=(o+nr%10)*10;
+           nr/=10;
+       }
+       o=o/10;
+    if(o==c) nrp++;
+     }
+     fout<<nrp;
+ }
+ if(c==2)
+ { int nr,c,n,p,nr;
+        fin>>n;
+     for(int i=1;i<=n;i++)
+     {
+       fin>>nr;
+        c=nr;
+        fcif(c,p);
+        while(c==nr%10)
+        {
+            elimcif(nr,p);
+            c=nr;
+            fcif(c,p);
+        }
+     }
+                          
+ }
+    return 0;
+}

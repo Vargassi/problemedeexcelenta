@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+int H,n,nr,nrb=0,nra=0;
+bool Hnr =false;
+cin>>H>>n;
+for(int i=1;i<=n;i++)
+{
+    cin>>nr;
+    if(H==nr){nrb++;nra++;Hnr=true;}
+    if((H/10)%10==(nr/10)%10) nrb++;
+    if(H/100==nr/100) nra++;
+
+}
+if(Hnr==true)cout<<"DA";
+ else cout<<"NU";
+cout<<' '<<nra<<' '<<nrb;
+    return 0;
+}

@@ -1,0 +1,14 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+int n,p,k;
+cin>>n>>p>>k;
+if(k%7==0)  cout<<n+(k/7)*(p*5-2)+(k%7)*p-2<<' '<<"cm";
+ else if(k%7<=5) cout<<n+(k/7)*(p*5-2)+(k%7)*p<<' '<<"cm";
+        else if(k%7==6) cout<<n+(k/7)*(p*5-2)+(k%7)*p-1<<' '<<"cm";
+
+    return 0;
+}

@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,k,exp=0,ci;
+    cin>>n>>k;
+    for(int i=1;i<=n;++i)
+    {ci=i;
+        while(ci%k==0)
+        {
+            ++exp;
+            ci=ci/k;
+        }
+    }
+    cout<<exp;
+     return 0;
+}

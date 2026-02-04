@@ -1,0 +1,43 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+ifstream fin("cufere.in");
+ofstream fout("cufere.out");
+bool isprime(int n)
+{
+    for(int i=2;i*i<=n;i++)
+        if(n%i==0) return false;
+    return true;
+}
+ int srted[100]={0};
+int main()
+{
+    int c,n,nr;
+    fin>>c>>n;
+    while(fin>>nr)
+        if(nr!=0)
+          srted[nr%100]+=nr/100;
+if(c==1)
+{
+    for(int i=10;i<=99;++i)
+      if(srted[i]!=0)
+        fout<<i<<' '<<srted[i]<<'\n';
+}
+else if(c==2)
+{ int i,s;
+ for( i=10;i<=99;++i)
+  if(srted[i]!=0)
+  {
+      if(isprime[i]==0) s=64;
+       else s=16;
+       while(srted[i]>0)
+        {
+        if(srted[i]>=s) {fout<<s<<i<<' '; srted[i]-=s;}
+           else {fout<<srted[i]<<i<<' '; srted[i]-=srted[i];}
+        }
+  }
+  while()
+}
+
+    return 0;
+}
